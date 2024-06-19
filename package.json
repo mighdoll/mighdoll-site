@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "wrangler pages deploy dist"
+    "pages:deploy": "wrangler pages deploy --project-name mighdoll dist"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
