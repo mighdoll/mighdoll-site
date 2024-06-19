@@ -1,0 +1,85 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { Project, db } from 'astro:db';
+import "../../styles/titled.css"
+
+const projects = await db.select().from(Project).orderBy(Project.feature, Project.pubDate);
+
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 3rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				width: calc(50% - 1.5rem);
+			}
+			ul li a {
+				display: block;
+			}
+			.title {
+				margin: 0;
+				color: var(--text-color));
+				line-height: 1;
+			}
+			.date {
+				margin: 0;
+				color: rgb(var(--gray));
+			}
+			ul a:hover img {
+				box-shadow: var(--box-shadow);
+			}
+			@media (max-width: 720px) {
+				ul {
+					gap: 0.5em;
+				}
+				ul li {
+					width: 100%;
+				}
+				ul li:first-child {
+					margin-bottom: 0;
+				}
+				ul li:first-child .title {
+					font-size: 1.563em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section>
+				<ul>
+					{
+						projects.map((proj) => (
+							<li>
+								<a href={proj.repo}>
+									<article>
+										<div class="title">{proj.name}</div>
+										<div class="subTitle">
+											<div> {proj.tagLine} </div>
+											<div> {proj.pubDate.getFullYear()} </div>
+										</div>
+										<span class="description">{proj.description}</span>
+									</article>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

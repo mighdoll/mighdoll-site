@@ -1,0 +1,70 @@
+---
+import { Blog, Project, db, desc, isNotNull, isNull, ne, or } from "astro:db";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { prettyDate } from "../util.js";
+import "../styles/titled.css"
+
+const projects = await db.select()
+  .from(Project)
+  .where(isNotNull(Project.feature))
+  .orderBy(Project.feature);
+
+const blogPosts = await db.select()
+  .from(Blog)
+  .where(
+    or(
+      isNull(Blog.hide), 
+      ne(Blog.hide, true)
+    )
+  )
+  .orderBy(desc(Blog.pubDate));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .sectionHeader {
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 300;
+        margin: 3.5rem 0 1.5rem 0;
+      } 
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="sectionHeader">Projects</div>
+      {
+        projects.map(({ name, description, repo }) => (
+          <a href={repo}>
+            <article>
+              <span class="title">{name}</span>
+              <div class="description">{description}</div>
+            </article>
+          </a>
+        ))
+      }
+      <div class="sectionHeader">Blog Posts</div>
+      {
+        blogPosts.map(({ title, slug, pubDate, description }) => {
+          return (
+            <a href=`blog/${slug}`>
+              <article>
+                <span class="title">{title}</span>
+                <div class="subTitle">{prettyDate(pubDate)}</div>
+                <div class="description">{description}</div>
+              </article>
+            </a>
+          )
+        } )
+      }
+    </main>
+    <Footer />
+  </body>
+</html>
