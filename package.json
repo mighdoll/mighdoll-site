@@ -12,18 +12,20 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/db": "^0.11.4",
-    "@astrojs/mdx": "^3.0.1",
+    "@astrojs/db": "^0.11.6",
+    "@astrojs/mdx": "^3.1.1",
     "@astrojs/rss": "^4.0.6",
-    "@astrojs/sitemap": "^3.1.5",
-    "@shikijs/twoslash": "^1.6.2",
-    "astro": "^4.9.2",
+    "@astrojs/sitemap": "^3.1.6",
+    "@shikijs/twoslash": "^1.7.0",
+    "astro": "^4.10.3",
+    "astro-og-canvas": "^0.5.1",
     "astro-themes": "^0.2.5",
+    "canvaskit-wasm": "^0.39.1",
     "dark-mode-toggle": "^0.15.0",
-    "mini-parse": "^0.4.4"
+    "mini-parse": "^0.4.6"
   },
   "devDependencies": {
     "typescript": "^5.4.5",
-    "wrangler": "^3.60.3"
+    "wrangler": "^3.61.0"
   }
 }
