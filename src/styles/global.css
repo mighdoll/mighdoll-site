@@ -24,10 +24,9 @@ pre.twoslash {
   overflow: visible !important;
 }
 
-.twoslash-popup-container {
-  width: max-content;
-  max-width: 600px;
-  text-overflow: wrap;
+.twoslash .twoslash-popup-container code {
+  max-width: 60vw;
+  white-space: pre-wrap;
 }
 
 html[data-theme="dark"] {
@@ -113,6 +112,7 @@ pre {
     line-height: 1.5em;
     background: var(--code-background);
     & .twoslash-popup-container {
+      width: max-content;
       background: var(--popup-background) !important;
       box-shadow: var(--popup-shadow);
     }
@@ -121,7 +121,7 @@ pre {
 
 code.twoslash-popup-code {
   & pre {
-    padding: .5em .5em;
+    padding: 0.5em 0.5em;
     background: var(--popup-background) !important;
     margin: 0;
   }
