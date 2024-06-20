@@ -112,15 +112,19 @@ pre {
     background: unset;
   }
 }
-html[data-theme="dark"] pre.astro-code {
-  color: var(--shiki-dark) !important;
-  background-color: var(--code-background) !important;
+
+html[data-theme="dark"] {
+  /* shiki sets colors with inline styles,
+    so we have to override with !important for dark mode.  */
+  & pre.astro-code.twoslash { 
+    background-color: var(--code-background) !important;
+  }
+
+  & .astro-code span {
+    color: var(--shiki-dark) !important;
+  }
 }
 
-html[data-theme="dark"] .astro-code span {
-  color: var(--shiki-dark) !important;
-  background-color: var(--code-background) !important;
-}
 
 blockquote {
   border-left: 4px solid var(--accent);
