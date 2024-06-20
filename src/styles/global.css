@@ -27,7 +27,7 @@ pre.twoslash {
 .twoslash-popup-container {
   width: max-content;
   max-width: 600px;
-  text-overflow:wrap;
+  text-overflow: wrap;
 }
 
 html[data-theme="dark"] {
@@ -138,14 +138,17 @@ html[data-theme="dark"] {
     color: var(--shiki-dark) !important;
   }
 
-  & .astro-code .twoslash-popup-container {
+  & .twoslash .twoslash-popup-container {
     background-color: var(--shiki-dark-bg) !important;
   }
-  & .astro-code .twoslash-popup-container pre {
+  & .twoslash .twoslash-popup-container pre {
+    background-color: var(--shiki-dark-bg) !important;
+  }
+
+  & .twoslash .twoslash-completion-list {
     background-color: var(--shiki-dark-bg) !important;
   }
 }
-
 blockquote {
   border-left: 4px solid var(--accent);
   padding: 0 0 0 20px;
