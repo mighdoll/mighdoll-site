@@ -6,9 +6,10 @@ export default async function () {
       name: "mini-parse",
       slug: "mini-parse",
       tagLine: "Small TypeScript parser combinators",
-      description:
+      description: oneLine(
         `A small TypeScript parser combinator library 
-         with an efficient regex based lexer.`,
+         with an efficient regex based lexer.`
+      ),
       pubDate: new Date("Feb 8 2024"),
       repo: "https://github.com/mighdoll/wgsl-linker/tree/main/packages/mini-parse",
       feature: 2,
@@ -37,28 +38,34 @@ export default async function () {
   await db.insert(Blog).values([
     {
       title: "Reactive WebGPU",
-      description: `Fine grained reactivity (aka signals) libraries are 
-      useful for WebGPU. 
-      Reactivity libraries offer hooks for lazy recalculation, 
-      resource reallocation, cleanup, caching, and dependency tracking.`,
+      description: oneLine(
+        `Fine grained reactivity (aka signals) libraries are 
+        useful for WebGPU. 
+        Reactivity libraries offer hooks for lazy recalculation, 
+        resource reallocation, cleanup, caching, and dependency tracking.`
+      ),
       pubDate: new Date("April 7 2023"),
       heroImage: "/blog-reactivity-webgpu.png",
       slug: "reactive-webgpu",
     },
     {
       title: "TypeScript Tricks for Combining Records",
-      description: `Use fancy TypeScript type constructors to safely work with Records. 
-      Add fields to Records using mapped types. 
-      Intersect Records using contravariance. 
-      Recover Record types after intersection.`,
+      description: oneLine(
+        `Use fancy TypeScript type constructors to safely work with Records. 
+         Add fields to Records using mapped types. 
+         Intersect Records using contravariance. 
+         Recover Record types after intersection.`
+      ),
       pubDate: new Date("June 21 2024"),
       heroImage: "/blog-records-cropped.webp",
       slug: "typescript-tricks-combining-records",
     },
     {
       title: "Tagged Parser Combiniators",
-      description: `A 'tag' feature for parser combinators 
-      makes extracting parsing results easier and more maintainable.`,
+      description: oneLine(
+        `A 'tag' feature for parser combinators 
+         makes extracting parsing results easier and more maintainable.`
+      ),
       pubDate: new Date("July 27 2024"),
       hide: true,
       slug: "tagged-parser-combinators",
@@ -78,4 +85,8 @@ export default async function () {
       slug: "infer-type-parameters",
     },
   ]);
+}
+
+function oneLine(s: string): string {
+  return s.replaceAll(/\s*\n\s*/g, " ");
 }
