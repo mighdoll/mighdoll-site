@@ -396,4 +396,4 @@ The demo site using this example Mosaic shader is available here:
 [thimbleberry]: https://thimbleberry.dev
 [thimb-src]: https://github.com/mighdoll/thimbleberry
 [lit]: https://lit.dev
-[milomg]: https://milomg.pages.dev
+[milomg]: https://milomg.dev
