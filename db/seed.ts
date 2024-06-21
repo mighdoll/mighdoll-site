@@ -52,7 +52,7 @@ export default async function () {
       Intersect Records using contravariance. 
       Recover Record types after intersection.`,
       pubDate: new Date("June 19 2024"),
-      heroImage: "/blog-typescript-record-tricks.webp",
+      heroImage: "/blog-records-cropped.webp",
       slug: "typescript-tricks-combining-records",
     },
     {
