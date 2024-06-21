@@ -51,7 +51,7 @@ export default async function () {
       Add fields to Records using mapped types. 
       Intersect Records using contravariance. 
       Recover Record types after intersection.`,
-      pubDate: new Date("June 19 2024"),
+      pubDate: new Date("June 21 2024"),
       heroImage: "/blog-records-cropped.webp",
       slug: "typescript-tricks-combining-records",
     },
@@ -59,21 +59,21 @@ export default async function () {
       title: "Tagged Parser Combiniators",
       description: `A 'tag' feature for parser combinators 
       makes extracting parsing results easier and more maintainable.`,
-      pubDate: new Date("May 27 2024"),
+      pubDate: new Date("July 27 2024"),
       hide: true,
       slug: "tagged-parser-combinators",
     },
     {
       title: "Mapped Tuple Types",
       description: `Map one TypeScript tuple type to another`,
-      pubDate: new Date("May 27 2024"),
+      pubDate: new Date("August 27 2024"),
       hide: true,
       slug: "mapped-tuple-types",
     },
     {
       title: "Infer Type Parameters Implicitly",
       description: `Infer Type parameters in TypeScript without passing type parameters explicitly`,
-      pubDate: new Date("May 27 2024"),
+      pubDate: new Date("September 27 2024"),
       hide: true,
       slug: "infer-type-parameters",
     },
