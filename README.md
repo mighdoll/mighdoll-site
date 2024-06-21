@@ -30,7 +30,7 @@ in page frontmatter.
   see global.css for tweaks for dark mode, overflow, etc.
 
 - The blog post diagrams imitate the styling of Shiki,
-  but aren't real TypeScript and style manually.
+  but aren't real TypeScript and are styled manually.
 
 #### Link Previews
 
@@ -43,3 +43,4 @@ in page frontmatter.
 - 'more' buttons for projects and blog posts not featured on the home page.
 - add logo
 - add home page welcome pic and text
+- try using shiki for formatting diagram snippets.
