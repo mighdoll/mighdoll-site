@@ -7,7 +7,7 @@ import db from "@astrojs/db";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://mighdoll.dev",
   integrations: [mdx(), sitemap(), db()],
   markdown: {
     shikiConfig: {
