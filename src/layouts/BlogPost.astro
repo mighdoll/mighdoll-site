@@ -15,19 +15,12 @@ const blogPost = await db
   .limit(1);
 
 const { title, description, pubDate, heroImage } = blogPost[0];
-const pageUrl = `https://mighdoll.dev/blog/${Astro.props.slug}`;
-const ogImage = `https://mighdoll.dev/open-graph/blog/${Astro.props.slug}.png`;
+const image = `/open-graph/blog/${Astro.props.slug}.png`;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
-    <meta property="og:title" content={title} />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content={pageUrl} />
-    <meta property="og:image" content={ogImage} />
-
-    <meta name="description" content={description} />
+    <BaseHead title={title} image={image} description={description} />
     
     <style>
       .hero-image {
