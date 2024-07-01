@@ -8,6 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "deploy:site": "run-s build pages:deploy",
     "pages:deploy": "wrangler pages deploy --project-name mighdoll dist"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "mini-parse": "^0.4.6"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "typescript": "^5.4.5",
     "wrangler": "^3.61.0"
   }
