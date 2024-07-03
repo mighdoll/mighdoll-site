@@ -57,6 +57,7 @@ export default async function () {
          Recover Record types after intersection.`
       ),
       pubDate: new Date("June 21 2024"),
+      updatedDate: new Date("July 2 2024"),
       heroImage: "/blog-records-cropped.webp",
       slug: "typescript-tricks-combining-records",
     },

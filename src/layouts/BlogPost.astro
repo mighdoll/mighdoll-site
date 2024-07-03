@@ -14,14 +14,14 @@ const blogPost = await db
   .where(eq(Blog.slug, Astro.props.slug ?? ""))
   .limit(1);
 
-const { title, description, pubDate, heroImage } = blogPost[0];
+const { title, description, pubDate, updatedDate, heroImage } = blogPost[0];
 const image = `/open-graph/blog/${Astro.props.slug}.png`;
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} image={image} description={description} />
-    
+
     <style>
       .hero-image {
         width: 100%;
@@ -42,7 +42,7 @@ const image = `/open-graph/blog/${Astro.props.slug}.png`;
         border-radius: 12px;
         box-shadow: var(--box-shadow);
       }
-      .last-updated-on {
+      .last-updated {
         font-style: italic;
       }
     </style>
@@ -66,13 +66,11 @@ const image = `/open-graph/blog/${Astro.props.slug}.png`;
             </div>
             <div class="subTitle">
               {prettyDate(pubDate)}
-              <!-- {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on {prettyDate(updatedDate)} />
-                  </div>
-                )
-              } -->
+              {updatedDate && (
+                <div class="last-updated">
+                  (updated {prettyDate(updatedDate)}) 
+                </div>
+              )}
             </div>
           </div>
         </div>

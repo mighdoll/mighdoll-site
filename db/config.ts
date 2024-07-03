@@ -18,6 +18,7 @@ const Blog = defineTable({
     description: column.text(),
     heroImage: column.text({ optional: true }),
     pubDate: column.date(),
+    updatedDate: column.date({ optional: true }),
     slug: column.text(),
     hide: column.boolean({ optional: true }),
   },
