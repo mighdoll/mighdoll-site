@@ -46,8 +46,8 @@ but noted that it sometimes [fails][Intersection-Fails].
 
 [Intersection] was originally proposed by @jcalz
 on [stack overflow][jcalz-intersection].
-I recently learned of a nice improvement to [Intersection] from @Gerrit0,
-though, and I think the improved version deserves wider circulation.
+I recently learned of a nice improvement to [Intersection] from @Gerrit0.
+I think the improved version deserves wider circulation.
 It uses a relatively new TypeScript feature,
 introduced in TypeScript version 4.8,
 which allows for an [extends refinement on infer clauses][infer extends].
