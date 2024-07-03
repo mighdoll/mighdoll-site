@@ -41,14 +41,15 @@ slug: "modern-typescript-intersection"
 </div>
 
 In a previous [post][Combining-Records],
-we discussed using the [Intersection] type constructor in TypeScript,
+I discussed using the [Intersection] type constructor in TypeScript,
 but noted that it sometimes [fails][Intersection-Fails].
 
 [Intersection] was originally proposed by @jcalz
 on [stack overflow][jcalz-intersection].
 I recently learned of a nice improvement to [Intersection] from @Gerrit0.
-I think the improved version deserves wider circulation.
-It uses a relatively new TypeScript feature,
+The improved version deserves wider circulation.
+
+The improvement takes advantage of a relatively new TypeScript feature,
 introduced in TypeScript version 4.8,
 which allows for an [extends refinement on infer clauses][infer extends].
 
@@ -66,8 +67,8 @@ type Intersection<U> =
 ```
 
 The key change is to `infer I extends U` instead of just `infer I`.
-TypeScript then keeps better track constraint on `I`
-and that fixes the [failure][Intersection-Fails] 
+With that change, TypeScript keeps better track of the constraint on `I`.
+And that fixes the [failure][Intersection-Fails] 
 described in the previous [post][combining-records].
 
 ### Original Intersection
@@ -141,8 +142,8 @@ That's a little more constraining for general use.
 Firstly, [AsRecord] demands that the result
 you want is indeed a `Record`,
 which is not the only intersection of types you might want.
-And secondly, even for `Record`s you might find
-that you need different variations of [AsRecord]
+And secondly, even for `Record`s you may
+need different variations of [AsRecord]
 for different record shapes,
 e.g. [AsRecordArray][AsRecord].
 
