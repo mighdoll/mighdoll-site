@@ -68,9 +68,9 @@ export default async function () {
          an improved type constructor to convert union types
          to intersection types.`
       ),
-      pubDate: new Date("July 2 2024"),
+      pubDate: new Date("July 3 2024"),
       slug: "modern-typescript-intersection",
-      hide: true,
+      heroImage: "/blog-modern-intersection.jpg",
     },
     {
       title: "Tagged Parser Combiniators",
