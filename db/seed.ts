@@ -61,6 +61,17 @@ export default async function () {
       slug: "typescript-tricks-combining-records",
     },
     {
+      title: "Modern Union To Intersection",
+      description: oneLine(
+        `Modern TypeScript enables us to build
+         an improved type constructor to convert union types
+         to intersection types.`
+      ),
+      pubDate: new Date("July 2 2024"),
+      slug: "modern-typescript-intersection",
+      hide: true,
+    },
+    {
       title: "Tagged Parser Combiniators",
       description: oneLine(
         `A 'tag' feature for parser combinators 

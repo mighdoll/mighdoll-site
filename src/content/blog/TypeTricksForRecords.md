@@ -257,7 +257,7 @@ usually close enough to be considered a single merged Record.
 ## Recovering Record Types from Record Intersections
 
 <div class="diagram container">
-  <div class="diagram lhs"> 
+  <div class="diagram lhs">
     <span class="line">
       <span class="type"        >?T </span>
       <span class="punctutation">{</span>
