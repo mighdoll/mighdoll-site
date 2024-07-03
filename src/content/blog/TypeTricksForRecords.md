@@ -335,6 +335,9 @@ type ParamIntersect<A extends ARecord> = Verify<Intersection<A>>;
 
 ### Solution - Recover the Record Type
 
+* _(Update July 2024): For a newer solution, see
+[Modern Intersection](https://mighdoll.dev/blog/modern-typescript-intersection)_
+
 The following will help recover the Record type after `Intersection`.
 
 For basic Record types, try this to conslidate the Record:
