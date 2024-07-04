@@ -45,11 +45,11 @@ I discussed using the [Intersection] type constructor in TypeScript,
 but noted that it sometimes [fails][Intersection-Fails].
 
 [Intersection] was originally proposed by @jcalz
-on [stack overflow][jcalz-intersection].
-I recently learned of a nice improvement to [Intersection] from @Gerrit0.
+on [stack overflow][jcalz-intersection] in 2018.
+But I recently learned of a nice improvement to [Intersection] from @gerrit0.
 The improved version deserves wider circulation.
 
-The improvement takes advantage of a relatively new TypeScript feature,
+The improvement to `Intersection` takes advantage of a relatively new TypeScript feature,
 introduced in TypeScript version 4.8,
 which allows for an [extends refinement on infer clauses][infer extends].
 
@@ -67,7 +67,7 @@ type Intersection<U> =
 ```
 
 The key change is to `infer I extends U` instead of just `infer I`.
-With that change, TypeScript keeps better track of the constraint on `I`.
+With that tiny change, TypeScript now keeps better track of the constraint on `I`.
 And that fixes the [failure][Intersection-Fails] 
 described in the previous [post][combining-records].
 
